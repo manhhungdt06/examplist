@@ -62,6 +62,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    func getPath2() {
+    
+    }
+    
     func getDocumentsURL() -> NSURL {
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         print("documentsURL = \(documentsURL)")
@@ -77,47 +81,94 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func readData(_ sender: UIButton) {
+        
+        var data : [String: String] = [:]
+        let fileExam = FileManager.default
+        let docDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+        let path = docDirectory.appending("/exam.plist")
+        print("pathCity = \(path)")
+        if (!fileExam.fileExists(atPath: path)) {
+//            let data = NSMutableDictionary(contentsOfFile: path)
+            print("data file = \(data)")
+            if capitalTextField.text! == "" && nationTextField.text! == "" {
+                print("Oops, can't empty this field")
+            } else {
+                data[capitalTextField.text!] = nationTextField.text!
+                
+                let someData = NSDictionary(dictionary: data)
+                let isWritten = someData.write(toFile: path, atomically: true)
+                print("is the file created: \(isWritten)")
+            }
+            capitalTextField.text = ""
+            nationTextField.text = ""
+        }
+        else {
+            print("no file")
+        }
+
+
+         /* ----------------------------EXAM CREATE FILE------------------------------------------------ */
+         
+//         let plistPath = self.getPath()
+//         print("plistPath exportData = \(plistPath)")
+//         if FileManager.default.fileExists(atPath: plistPath) {
+//         print("Income")
+//         let nationAndCapitalCitys = NSMutableDictionary(contentsOfFile: plistPath)!
+//         if (capitalTextField.text! == "" || nationTextField.text! == "") {
+//         print("Oops, can't empty this field")
+//         } else {
+//         nationAndCapitalCitys.setValue(capitalTextField.text!, forKey: nationTextField.text!)
+//         nationAndCapitalCitys.write(toFile: plistPath, atomically: true)
+//         }
+//         }
+//         nationTextField.text = ""
+//         capitalTextField.text = ""
+//         displayNationAndCapitalCityNames()
+        
+        /* ----------------------------EXAM CREATE FILE------------------------------------------------ */
+         
+//        let fileManager = FileManager.default
+//        
+//        let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+//        let path = documentDirectory.appending("/pro.plist")
+//        
+//        print("pathTest = \(path)")
+//        
+//        if(!fileManager.fileExists(atPath: path)){
+//            print(path)
+//            
+//            let data : [String: String] = [
+//                "Company": "My Company",
+//                "FullName": "My Full Name",
+//                "FirstName": "My First Name",
+//                "LastName": "My Last Name",
+//                // any other key values
+//            ]
+//            
+//            let someData = NSDictionary(dictionary: data)
+//            let isWritten = someData.write(toFile: path, atomically: true)
+//            print("is the file created: \(isWritten)")
+//    
+//        } else {
+//            print("file exists")
+//        }
+
 
     }
     
     @IBAction func exportData(_ sender: UIButton) {
-        let plistPath = self.getPath()
-        print("plistPath exportData = \(plistPath)")
-        if FileManager.default.fileExists(atPath: plistPath) {
-            print("Income")
-            let nationAndCapitalCitys = NSMutableDictionary(contentsOfFile: plistPath)!
-            if (capitalTextField.text! == "" || nationTextField.text! == "") {
-                print("Oops, can't empty this field")
-            } else {
-                nationAndCapitalCitys.setValue(capitalTextField.text!, forKey: nationTextField.text!)
-                nationAndCapitalCitys.write(toFile: plistPath, atomically: true)
-            }
-        }
-        nationTextField.text = ""
-        capitalTextField.text = ""
-        displayNationAndCapitalCityNames()
-        
         
         let textFile = "abandon.txt"
         let textPath = fileInDocumentsDirectory(filename: textFile)
         let fileContent = try? NSString(contentsOfFile: textPath as String, encoding: String.Encoding.utf8.rawValue)
 
         print(fileContent!)
-        
+ 
         wordText = UITextView(frame: CGRect(x: 37, y: 8, width: 270, height: 177))
         
         wordText.text = (fileContent! as NSString) as String
         wordText.textAlignment = .center
         wordText.isEditable = false
-        
-
-//
-//        
-//        let contentSize = wordText.sizeThatFits(wordText.bounds.size)
-//
-//        var frame = wordText.frame
-//        frame.size.height = contentSize.height
-//        wordText.frame = frame
         
         // Define the specific path, image name
         let frontImg = "test1.png"
@@ -139,18 +190,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if let loadedBackImg = loadImageFromPath(path: backImgPath) {
             print(" Loaded Image: \(loadedBackImg)")
             let newBackImg = ResizeImage(image: loadedBackImg, targetSize: CGSize(width: 340, height: 190))
-            
             back = UIImageView(image: newBackImg)
         } else {
             print("some error message 2")
         }
+        
+        isFront = true
         
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(ViewController.tapped))
         singleTap.numberOfTapsRequired = 1
         
         let rect = CGRect(x: 16, y: 417, width: 344, height: 193)
         
+        if self.viewBgr != nil {
+            self.viewBgr.removeFromSuperview()
+        }
+        
         viewBgr = UIView(frame: rect)
+        
         viewBgr.addGestureRecognizer(singleTap)
         viewBgr.isUserInteractionEnabled = true
 //        viewBgr.addSubview(front)
