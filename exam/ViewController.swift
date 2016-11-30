@@ -50,6 +50,133 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.capitalTextField.delegate = self
         self.nationTextField.becomeFirstResponder()
         
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    //Get Path
+    func getPath() -> String {
+        let plistFileName = "data.plist"
+        //        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let paths = "/Users/techmaster/examplist/exam"
+        let documentPath = paths as NSString
+        let plistPath = documentPath.appendingPathComponent(plistFileName)
+        
+        return plistPath
+    }
+    
+    //Display Nation and Capital
+    func displayNationAndCapitalCityNames() {
+        let plistPath = self.getPath()
+        print("plistPath display = \(plistPath)")
+        if FileManager.default.fileExists(atPath: plistPath) {
+            if let nationAndCapitalCitys = NSMutableDictionary(contentsOfFile: plistPath) {
+                for (_, element) in nationAndCapitalCitys.enumerated() {
+                    print("zzz: \(element.key) --> \(element.value) \n")
+                }
+            }
+        }
+    }
+    
+    func getDocumentsURL() -> NSURL {
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+//        print("documentsURL = \(documentsURL)")
+        return documentsURL as NSURL
+    }
+    
+    func fileInDocumentsDirectory(filename: String) -> String {
+        
+        let fileURL = getDocumentsURL().appendingPathComponent(filename)
+//        print("fileURL path = \(fileURL!.path)")
+        return fileURL!.path
+        
+    }
+    
+    @IBAction func readData(_ sender: UIButton) {
+        
+        var data : [String: String] = [:]
+        let fileExam = FileManager.default
+        let docDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+        let path = docDirectory.appending("/exam.plist")
+        let path1 = docDirectory.appending("/exam1.plist")
+        let path2 = docDirectory.appending("/exam2.plist")
+        print("pathCity = \(path1)")
+        if (!fileExam.fileExists(atPath: path2)) {
+            
+            if capitalTextField.text! == "" && nationTextField.text! == "" {
+                print("Oops, can't empty this field")
+            } else {
+                data[capitalTextField.text!] = nationTextField.text!
+                
+                let someData = NSDictionary(dictionary: data)
+                let isWritten = someData.write(toFile: path, atomically: true)
+                print("is the file created: \(isWritten)")
+                
+                /* rewrite data not append Dict */
+                
+                let piePrice:Dictionary<String,Double> = [
+                    "Apple":3.99,"Raspberry":0.35
+                ]
+                
+                var examData1:[String: NSDictionary] = [:]
+                examData1["accomplish"] =  piePrice as NSDictionary
+                let someData1 = NSDictionary(dictionary: examData1)
+                someData1.write(toFile: path2, atomically: true)
+            }
+            
+        }
+        else {
+            let data = NSMutableDictionary(contentsOfFile: path)
+            
+            data?[nationTextField.text!] = capitalTextField.text!
+            data?.write(toFile: path, atomically: true)
+
+            var textInput: Dictionary<String,String> = [:]
+            textInput["city"] = nationTextField.text!
+            textInput["capital"] = capitalTextField.text!
+            
+            // if file exist
+            let data2 = NSMutableDictionary(contentsOfFile: path2)
+            data2?[popNum.text! as String] = textInput as NSDictionary
+            data2?.write(toFile: path2, atomically: true)
+            for dataKey in (data2?.allKeys)! {
+                print("data2 keys = \(dataKey)")
+            }
+            // exam 1
+//            var text: String?
+//            var sentence: String?
+//            var meaning: String?
+//            var type: String?
+//            var vocal: String?
+//            var sound: String?
+//            var image: String?
+//            var synonym: String?
+            
+            let piePrice:Dictionary<String,String> = [:]
+            
+            let examData:[String: NSDictionary] = [
+                "abandon": piePrice as NSDictionary
+            ]
+            let someData = NSDictionary(dictionary: examData)
+            someData.write(toFile: path1, atomically: true)
+            print("Exist File")
+        }
+        capitalTextField.text = ""
+        nationTextField.text = ""
+ 
+        
+        
+    }
+    func createText(_ textField: UITextView,_ text: String,_ color: UIColor,_ font: UIFont) {
+        textField.text = text
+        textField.font = font
+        textField.backgroundColor = color
+        textField.textAlignment = .center
+        textField.isEditable = false
+    }
+    @IBAction func exportData(_ sender: UIButton) {
         let docDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
         let path = docDirectory.appending("/items.plist")
         let data = NSMutableDictionary(contentsOfFile: path)
@@ -133,123 +260,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         viewBgr.addSubview(sentenText)
         
         view.addSubview(viewBgr)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    //Get Path
-    func getPath() -> String {
-        let plistFileName = "data.plist"
-        //        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-        let paths = "/Users/techmaster/examplist/exam"
-        let documentPath = paths as NSString
-        let plistPath = documentPath.appendingPathComponent(plistFileName)
-        
-        return plistPath
-    }
-    
-    //Display Nation and Capital
-    func displayNationAndCapitalCityNames() {
-        let plistPath = self.getPath()
-        print("plistPath display = \(plistPath)")
-        if FileManager.default.fileExists(atPath: plistPath) {
-            if let nationAndCapitalCitys = NSMutableDictionary(contentsOfFile: plistPath) {
-                for (_, element) in nationAndCapitalCitys.enumerated() {
-                    print("zzz: \(element.key) --> \(element.value) \n")
-                }
-            }
-        }
-    }
-    
-    func getDocumentsURL() -> NSURL {
-        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-//        print("documentsURL = \(documentsURL)")
-        return documentsURL as NSURL
-    }
-    
-    func fileInDocumentsDirectory(filename: String) -> String {
-        
-        let fileURL = getDocumentsURL().appendingPathComponent(filename)
-//        print("fileURL path = \(fileURL!.path)")
-        return fileURL!.path
-        
-    }
-    
-    @IBAction func readData(_ sender: UIButton) {
-        
-        var data : [String: String] = [:]
-        let fileExam = FileManager.default
-        let docDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
-        let path = docDirectory.appending("/exam.plist")
-        let path1 = docDirectory.appending("/exam1.plist")
-        let path2 = docDirectory.appending("/exam2.plist")
-        print("pathCity = \(path)")
-        if (!fileExam.fileExists(atPath: path)) {
-            
-            if capitalTextField.text! == "" && nationTextField.text! == "" {
-                print("Oops, can't empty this field")
-            } else {
-                data[capitalTextField.text!] = nationTextField.text!
-                
-                let someData = NSDictionary(dictionary: data)
-                let isWritten = someData.write(toFile: path, atomically: true)
-                print("is the file created: \(isWritten)")
-                
-                /* rewrite data not append Dict */
-                
-                let piePrice:Dictionary<String,Double> = [
-                    "Apple":3.99,"Raspberry":0.35
-                ]
-                
-                var examData1:[String: NSDictionary] = [:]
-                examData1["accomplish"] =  piePrice as NSDictionary
-                let someData1 = NSDictionary(dictionary: examData1)
-                someData1.write(toFile: path2, atomically: true)
-            }
-            
-        }
-        else {
-            let data = NSMutableDictionary(contentsOfFile: path)
-            
-            data?[capitalTextField.text!] = nationTextField.text!
-            data?.write(toFile: path, atomically: true)
-
-            var textInput: Dictionary<String,String> = [:]
-            textInput["city"] = nationTextField.text!
-            textInput["capital"] = capitalTextField.text!
-            
-            // if file exist
-            let data2 = NSMutableDictionary(contentsOfFile: path2)
-            data2?[popNum.text as Any] = textInput as NSDictionary
-            data2?.write(toFile: path2, atomically: true)
-            for dataKey in (data2?.allKeys)! {
-                print("data2 keys = \(dataKey)")
-            }
-            // exam 1
-            let examData:[String: NSDictionary] = [
-                "abandon": data!
-            ]
-            let someData = NSDictionary(dictionary: examData)
-            someData.write(toFile: path1, atomically: true)
-            print("Exist File")
-        }
-        capitalTextField.text = ""
-        nationTextField.text = ""
- 
-        
-        
-    }
-    func createText(_ textField: UITextView,_ text: String,_ color: UIColor,_ font: UIFont) {
-        textField.text = text
-        textField.font = font
-        textField.backgroundColor = color
-        textField.textAlignment = .center
-        textField.isEditable = false
-    }
-    @IBAction func exportData(_ sender: UIButton) {
-
     }
     
     func loadImageFromPath(path: String) -> UIImage? {
