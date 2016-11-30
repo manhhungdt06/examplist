@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>abandon</key>
+	<dict>
+		<key>sentence</key>
+		<string>Fearing further attacks, most of the population abandoned the city.</string>
+		<key>meaning</key>
+		<string>từ bỏ</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>vocalization</key>
+		<string>/ əˈbændən /</string>
+		<key>sound</key>
+		<string>abandon_v.mp3</string>
+		<key>image</key>
+		<string>abandon.jpeg</string>
+		<key>synonym</key>
+		<string></string>
+	</dict>
+	<key>abbreviate</key>
+	<dict>
+		<key>sentence</key>
+		<string>In writing, the title &quot;Doctor&quot; is abbreviated to &quot;Dr&quot;.</string>
+		<key>meaning</key>
+		<string>viết tắt</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>vocalization</key>
+		<string>/ əˈbriːvieɪt /</string>
+		<key>sound</key>
+		<string>abbreviate_v</string>
+		<key>image</key>
+		<string>abbreviate.jpeg</string>
+		<key>synonym</key>
+		<string>shorten</string>
+	</dict>
+	<key>absorb</key>
+	<dict>
+		<key>sentence</key>
+		<string>If you stay out in the sun too long, UV radiation will be absorbed into your skin and causes skin cancer.</string>
+		<key>meaning</key>
+		<string>hấp thụ</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>vocalization</key>
+		<string>/ əbˈsɔːrb /</string>
+		<key>sound</key>
+		<string>absorb_v</string>
+		<key>image</key>
+		<string>absorb.jpeg</string>
+		<key>synonym</key>
+		<string></string>
+	</dict>
+	<key>accommodate</key>
+	<dict>
+		<key>sentence</key>
+		<string>I was accommodated in this hotel during my business trip.</string>
+		<key>meaning</key>
+		<string>cung cấp nơi ở</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>vocalization</key>
+		<string>/ əˈkɑːmədeɪt /</string>
+		<key>sound</key>
+		<string>accommodate_v</string>
+		<key>image</key>
+		<string>accommodate.jpeg</string>
+		<key>synonym</key>
+		<string>house</string>
+	</dict>
+	<key>accomplish</key>
+	<dict>
+		<key>sentence</key>
+		<string>Surprisingly, the students accomplished the 30-minute test in only less than ten minutes.</string>
+		<key>meaning</key>
+		<string>hoàn thành</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>vocalization</key>
+		<string>/ əˈkɑːmplɪʃ /</string>
+		<key>sound</key>
+		<string>accomplish_v</string>
+		<key>image</key>
+		<string>accomplish.jpeg</string>
+		<key>synonym</key>
+		<string>complete</string>
+	</dict>
+	<key>accompany</key>
+	<dict>
+		<key>sentence</key>
+		<string>The patient does not need the nurse to accompany him to the bathroom.</string>
+		<key>meaning</key>
+		<string>đi theo, hộ tống</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>vocalization</key>
+		<string>/ əˈkʌmpəni /</string>
+		<key>sound</key>
+		<string>accompany_v</string>
+		<key>image</key>
+		<string>accompany.jpeg</string>
+		<key>synonym</key>
+		<string>escort</string>
+	</dict>
+	<key>adapt</key>
+	<dict>
+		<key>sentence</key>
+		<string>Tom is very healthy, which is why he can adapt to all kinds of weather.</string>
+		<key>meaning</key>
+		<string>làm thích nghi</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>vocalization</key>
+		<string>/ əˈdæpt /</string>
+		<key>sound</key>
+		<string>adapt_v</string>
+		<key>image</key>
+		<string>adapt.jpeg</string>
+		<key>synonym</key>
+		<string></string>
+	</dict>
+	<key>analyze</key>
+	<dict>
+		<key>sentence</key>
+		<string>The student is analyzing water samples in the laboratory.</string>
+		<key>meaning</key>
+		<string>phân tích</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>vocalization</key>
+		<string>/ ˈænəlaɪz /</string>
+		<key>sound</key>
+		<string>analyze_v</string>
+		<key>image</key>
+		<string>analyze.jpeg</string>
+		<key>synonym</key>
+		<string>examine</string>
+	</dict>
+	<key>anticipate</key>
+	<dict>
+		<key>sentence</key>
+		<string>The director anticipates that the share price will increase tomorrow.</string>
+		<key>meaning</key>
+		<string>mong đợi</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>vocalization</key>
+		<string>/ ænˈtɪsɪpeɪt /</string>
+		<key>sound</key>
+		<string>anticipate_v</string>
+		<key>image</key>
+		<string>anticipate.jpeg</string>
+		<key>synonym</key>
+		<string>expect</string>
+	</dict>
+	<key>antipathy</key>
+	<dict>
+		<key>sentence</key>
+		<string>Mrs. Green has deep antipathy towards her stepson. She never treats him well.</string>
+		<key>meaning</key>
+		<string>ác cảm</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>vocalization</key>
+		<string>/ ænˈtɪpəθi /</string>
+		<key>sound</key>
+		<string>antipathy_v</string>
+		<key>image</key>
+		<string>antipathy.jpeg</string>
+		<key>synonym</key>
+		<string>dislike</string>
+	</dict>
+	<key>attempt</key>
+	<dict>
+		<key>sentence</key>
+		<string>Peter attempted to finish the difficult test on time.</string>
+		<key>meaning</key>
+		<string>cố gắng</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>vocalization</key>
+		<string>/ əˈtempt /</string>
+		<key>sound</key>
+		<string>attempt_v</string>
+		<key>image</key>
+		<string>attempt.jpeg</string>
+		<key>synonym</key>
+		<string>try</string>
+	</dict>
+	<key>balance</key>
+	<dict>
+		<key>sentence</key>
+		<string>The tightrope walker can balance on a piece of rope expertly.</string>
+		<key>meaning</key>
+		<string>giữ thăng bằng</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>vocalization</key>
+		<string>/ ˈbæləns /</string>
+		<key>sound</key>
+		<string>balance_v</string>
+		<key>image</key>
+		<string>balance.jpeg</string>
+		<key>synonym</key>
+		<string></string>
+	</dict>
+	<key>benefit</key>
+	<dict>
+		<key>sentence</key>
+		<string>We are raising money for the fund which will benefit homeless children.</string>
+		<key>meaning</key>
+		<string>giúp ích</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>vocalization</key>
+		<string>/ ˈbenɪfɪt /</string>
+		<key>sound</key>
+		<string>benefit_v</string>
+		<key>image</key>
+		<string>benefit.jpeg</string>
+		<key>synonym</key>
+		<string></string>
+	</dict>
+	<key>bewilder</key>
+	<dict>
+		<key>sentence</key>
+		<string>James was bewildered by his daughter&apos;s demand; he did not know how to please her.</string>
+		<key>meaning</key>
+		<string>gây bối rối
+</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>vocalization</key>
+		<string>/ bɪˈwɪldər /</string>
+		<key>sound</key>
+		<string>bewilder_v</string>
+		<key>image</key>
+		<string>bewilder.jpeg</string>
+		<key>synonym</key>
+		<string>confuse</string>
+	</dict>
+	<key>boost</key>
+	<dict>
+		<key>sentence</key>
+		<string>The government implemented a national plan to boost public health.</string>
+		<key>meaning</key>
+		<string>đẩy mạnh</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>vocalization</key>
+		<string>/ buːst /</string>
+		<key>sound</key>
+		<string>boost_v</string>
+		<key>image</key>
+		<string>boost.jpeg</string>
+		<key>synonym</key>
+		<string></string>
+	</dict>
+	<key>breach</key>
+	<dict>
+		<key>sentence</key>
+		<string>The police officer pulled Peter over because he breached the road rules.</string>
+		<key>meaning</key>
+		<string>vi phạm</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>vocalization</key>
+		<string>/ briːtʃ /</string>
+		<key>sound</key>
+		<string>breach_v</string>
+		<key>image</key>
+		<string>breach.jpeg</string>
+		<key>synonym</key>
+		<string></string>
+	</dict>
+	<key>browse</key>
+	<dict>
+		<key>sentence</key>
+		<string>Mr. Thomas browsed through a sports magazine while waiting for his wife.</string>
+		<key>meaning</key>
+		<string>đọc lướt</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>vocalization</key>
+		<string>/ braʊz /</string>
+		<key>sound</key>
+		<string>browse_v</string>
+		<key>image</key>
+		<string>browse.jpeg</string>
+		<key>synonym</key>
+		<string>scan</string>
+	</dict>
+	<key>circulate</key>
+	<dict>
+		<key>sentence</key>
+		<string>Blood circulates throughout the body to keep the organs functioning properly.</string>
+		<key>meaning</key>
+		<string>lưu thông</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>vocalization</key>
+		<string>/ ˈsɜːrkjəleɪt /</string>
+		<key>sound</key>
+		<string>circulate_v</string>
+		<key>image</key>
+		<string>circulate.jpeg</string>
+		<key>synonym</key>
+		<string></string>
+	</dict>
+	<key>claim</key>
+	<dict>
+		<key>sentence</key>
+		<string>Mr. Ferguson claimed that he owned this house.</string>
+		<key>meaning</key>
+		<string>khẳng định</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>vocalization</key>
+		<string>/ kleɪm /</string>
+		<key>sound</key>
+		<string>claim_v</string>
+		<key>image</key>
+		<string>claim.jpeg</string>
+		<key>synonym</key>
+		<string></string>
+	</dict>
+	<key>clarify</key>
+	<dict>
+		<key>sentence</key>
+		<string>The teacher uses funny illustrations to clarify his lecture.</string>
+		<key>meaning</key>
+		<string>làm rõ</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>vocalization</key>
+		<string>/ ˈklærəfaɪ /</string>
+		<key>sound</key>
+		<string>clarify_v</string>
+		<key>image</key>
+		<string>clarify.jpeg</string>
+		<key>synonym</key>
+		<string></string>
+	</dict>
+	<key>coincide</key>
+	<dict>
+		<key>sentence</key>
+		<string>Peter had his birthday timed to coincide with a holiday weekend so that all his friends could come.</string>
+		<key>meaning</key>
+		<string>xảy ra đồng thời</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>vocalization</key>
+		<string>/ ˌkoʊɪnˈsaɪd /</string>
+		<key>sound</key>
+		<string>coincide_v</string>
+		<key>image</key>
+		<string>coincide.jpeg</string>
+		<key>synonym</key>
+		<string></string>
+	</dict>
+</dict>
+</plist>
